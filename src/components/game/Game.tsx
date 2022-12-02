@@ -1,14 +1,20 @@
-function Game(): JSX.Element {
+import {QuestionType} from '../../types/questions';
+
+type GameType = {
+  currentQuestion: QuestionType,
+};
+
+function Game({currentQuestion}: GameType): JSX.Element {
   return (
     <>
       <div className="progress">
         <div style={{ width: '50%' }} className="progress__inner"></div>
       </div>
-      <h1>Что такое useState?</h1>
+      <h1>{currentQuestion.title}</h1>
       <ul>
-        <li>Это функция для хранения данных компонента</li>
-        <li>Это глобальный стейт</li>
-        <li>Это когда на ты никому не нужен</li>
+        {currentQuestion.variants.map((variant) => 
+          <li key={variant}>{variant}</li>
+        )}
       </ul>
     </>
   );
