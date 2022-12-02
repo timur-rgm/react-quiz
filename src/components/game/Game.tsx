@@ -5,14 +5,16 @@ type GameType = {
 };
 
 function Game({currentQuestion}: GameType): JSX.Element {
+  const {title, variants} = currentQuestion;
+
   return (
     <>
       <div className="progress">
         <div style={{ width: '50%' }} className="progress__inner"></div>
       </div>
-      <h1>{currentQuestion.title}</h1>
+      <h1>{title}</h1>
       <ul>
-        {currentQuestion.variants.map((variant) => 
+        {variants.map((variant) => 
           <li key={variant}>{variant}</li>
         )}
       </ul>
