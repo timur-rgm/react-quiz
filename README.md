@@ -11,4 +11,4 @@
 * SCSS
 * Jest, React Testing Library
 
-![react-quiz](https://user-images.githubusercontent.com/66139449/205212419-83b54667-285a-44a9-bb64-e8c0bca00a90.jpg)
+![20221202_090952 (1)](https://user-images.githubusercontent.com/66139449/205213681-503cf7e9-8a85-4dfe-9ff1-cf3b6a3c0780.gif)
