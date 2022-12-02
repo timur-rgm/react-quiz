@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import Game from '../game/Game';
+import Result from '../result/Result';
 import {questions} from '../../mocks/questions';
 
 function App(): JSX.Element {
@@ -18,11 +19,13 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      <Game
-        currentStep={step}
-        currentQuestion={currentQuestion}
-        onVariantClick={onVariantClick}
-      />
+      {step !== questions.length
+        ? <Game
+            currentStep={step}
+            currentQuestion={currentQuestion}
+            onVariantClick={onVariantClick}
+          />
+        : <Result correct={correct}/>}
     </div>
   );
 };
