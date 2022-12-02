@@ -2,9 +2,10 @@ import {QuestionType} from '../../types/questions';
 
 type GameType = {
   currentQuestion: QuestionType,
+  onVariantClick: () => void,
 };
 
-function Game({currentQuestion}: GameType): JSX.Element {
+function Game({currentQuestion, onVariantClick}: GameType): JSX.Element {
   const {title, variants} = currentQuestion;
 
   return (
@@ -15,7 +16,12 @@ function Game({currentQuestion}: GameType): JSX.Element {
       <h1>{title}</h1>
       <ul>
         {variants.map((variant) => 
-          <li key={variant}>{variant}</li>
+          <li
+            key={variant}
+            onClick={onVariantClick}
+          >
+            {variant}
+          </li>
         )}
       </ul>
     </>

@@ -6,9 +6,16 @@ function App(): JSX.Element {
   const [step, setStep] = useState(0);
   const currentQuestion = questions[step];
 
+  const onVariantClick = () => {
+    setStep(step + 1);
+  }
+
   return (
     <div className="App">
-      <Game currentQuestion={currentQuestion} />
+      <Game
+        currentQuestion={currentQuestion}
+        onVariantClick={onVariantClick}
+      />
     </div>
   );
 }
