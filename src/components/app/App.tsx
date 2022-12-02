@@ -13,6 +13,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <Game
+        currentStep={step}
         currentQuestion={currentQuestion}
         onVariantClick={onVariantClick}
       />
