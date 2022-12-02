@@ -4,7 +4,7 @@ import {QuestionType} from '../../types/questions';
 type GameType = {
   currentStep: number,
   currentQuestion: QuestionType,
-  onVariantClick: () => void,
+  onVariantClick: (index: number) => void,
 };
 
 function Game({currentStep, currentQuestion, onVariantClick}: GameType): JSX.Element {
@@ -18,10 +18,10 @@ function Game({currentStep, currentQuestion, onVariantClick}: GameType): JSX.Ele
       </div>
       <h1>{title}</h1>
       <ul>
-        {variants.map((variant) => 
+        {variants.map((variant, index) => 
           <li
             key={variant}
-            onClick={onVariantClick}
+            onClick={() => onVariantClick(index)}
           >
             {variant}
           </li>
